@@ -9,17 +9,8 @@ Jarvis - Loki-Xer
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
-const {
-    System,
-    IronMan,
-    getJson,
-    postJson,
-    isPrivate,
-    interactWithAi,
-    makeUrl,
-    gemini,
-    config
-} = require("../lib/");
+const { System, isPrivate, interactWithAi, makeUrl, gemini, config } = require("../lib/");
+const { IronMan, getJson, postJson } = require('./client/');
 
 System({
     pattern: "thinkany", 
@@ -130,7 +121,7 @@ System({
 });
 
 System({
-    pattern: 'upscale ?(.*)',
+    pattern: 'upscale',
     fromMe: isPrivate,
     desc: 'Enhance images with AI',
     type: 'ai',
@@ -142,7 +133,7 @@ System({
 });
 
 System({
-	pattern: 'ocr ?(.*)',
+	pattern: 'ocr',
 	fromMe: isPrivate,
 	desc: 'Text Recognition from image',
 	type: 'ai',
@@ -157,7 +148,7 @@ System({
 });
 
 System({
-  pattern: 'detectai ?(.*)',
+  pattern: 'detectai',
   fromMe: isPrivate,
   desc: 'Detects AI-generated text',
   type: 'ai',
@@ -170,7 +161,7 @@ System({
 
 
 System({
-   pattern: 'gemini ?(.*)',
+   pattern: 'gemini',
    fromMe: isPrivate,
    desc: 'Chat with gemini ai',
    type: 'ai',
